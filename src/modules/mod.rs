@@ -5,12 +5,10 @@ use anyhow::Result;
 use crate::interceptor::Interceptor;
 
 mod ccp_blocker;
-mod http;
 mod misc;
 mod security;
 
 pub use ccp_blocker::CcpBlocker;
-pub use http::Http;
 pub use misc::Misc;
 pub use security::Security;
 
@@ -40,7 +38,6 @@ impl ModuleManager {
 
 #[derive(Copy, Clone, Hash, PartialEq, Eq)]
 pub enum ModuleType {
-    Http,
     Security,
     Misc,
     CcpBlocker,
